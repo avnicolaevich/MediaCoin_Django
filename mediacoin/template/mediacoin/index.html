@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
-{% block title %} MediaCoin {% endblock %}
+
+{% block title %} Media Coin {% endblock %}
+
 {% block content %}
-foo.
+
+    {% include "mediacoin/partials/section-header.html" %}
+    {% include "mediacoin/partials/section-features.html" %}
+    {% include "mediacoin/partials/section-getting-started.html" %}
+    {% include "mediacoin/partials/section-pre-ico-budget.html" %}
+    {% include "mediacoin/partials/section-ico-token-budget.html" %}
+    {% include "mediacoin/partials/section-ico-stretch-goals.html" %}
+    {% include "mediacoin/partials/section-funding-pre-ico.html" %}
+    {% include "mediacoin/partials/section-team-freebie.html" %}
+    {% include "mediacoin/partials/section-hiring.html" %}
+
 {% endblock %}

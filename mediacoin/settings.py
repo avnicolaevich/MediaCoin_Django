@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mediacoin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(os.path.dirname(__file__), '..//', 'mediacoin/template').replace('\\', '/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +67,10 @@ TEMPLATES = [
         },
     },
 ]
+
+TEMPLATE_DIRS = (
+    BASE_DIR + '/templates/',
+)
 
 WSGI_APPLICATION = 'mediacoin.wsgi.application'
 
