@@ -24,6 +24,10 @@ from mediacoin import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    # landing page
     url(r'^$', views.index, name='index'),
+
+    # check uuid in db and if not stored in db, add new one - works for both of logged in user and not user
+    url(r'^register-uuid$', views.registerUUID, name='register-uuid'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
