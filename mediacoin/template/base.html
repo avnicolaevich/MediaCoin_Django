@@ -49,8 +49,6 @@
 <script type="text/javascript" src="{% static "javascripts/uuid-generate.js" %}"></script>
 <script type="text/javascript" src="{% static "javascripts/identify.js" %}"></script>
 
-{% block page-scripts %}{% endblock %}
-
 <script>
     $(document).ready(function () {
         /* register csrftoken for all customized ajax */
@@ -72,4 +70,7 @@
         UserIdentify.setCurUserIdentify();
     });
 </script>
+
+{% block page-scripts %}{% endblock %}
+
 </html>

@@ -20,6 +20,98 @@
 
 {% block page-scripts %}
 
+    <!-- Load PayPal's checkout.js Library. -->
+    <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
+    <!-- Load the client component. -->
+    <script src="https://js.braintreegateway.com/web/3.26.0/js/client.min.js"></script>
+    <!-- Load the PayPal Checkout component. -->
+    <script src="https://js.braintreegateway.com/web/3.26.0/js/paypal-checkout.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/jquery.loadingoverlay/latest/loadingoverlay.min.js"></script>
+
+    <script>
+        var gift_type = 'buy-for-me', gift_price = 5;
+        $(document).ready(function () {
+            $('.gift-payments').LoadingOverlay("show", { zIndex: 999 });
+
+            $.ajax({
+                url: "{% url 'get-braintree-token' %}",
+                type: "POST"
+            }).done(function (response) {
+                braintree.client.create({
+                    authorization: response.client_token
+                }, function (err, clientInstance) {
+                    // Stop if there was a problem creating the client.
+                    // This could happen if there is a network error or if the authorization
+                    // is invalid.
+                    if (err) {
+                        console.error('Error creating client:', err);
+                        return;
+                    }
+
+                    // Create a PayPal Checkout component.
+                    braintree.paypalCheckout.create({
+                        client: clientInstance
+                    }, function (paypalCheckoutErr, paypalCheckoutInstance) {
+                        // Stop if there was a problem creating PayPal Checkout.
+                        // This could happen if there was a network error or if it's incorrectly
+                        // configured.
+                        if (paypalCheckoutErr) {
+                            console.error('Error creating PayPal Checkout:', paypalCheckoutErr);
+                            return;
+                        }
+
+                        // Set up PayPal with the checkout.js library
+                        paypal.Button.render({
+                            env: 'sandbox',
+
+                            payment: function () {
+                                return paypalCheckoutInstance.createPayment({
+                                    flow: 'checkout',
+                                    singleUse: true,
+                                    amount: gift_price,
+                                    currency: 'USD',
+                                    intent: 'sale'
+                                });
+                            },
+
+                            onAuthorize: function (data, actions) {
+                                return paypalCheckoutInstance.tokenizePayment(data).then(function (payload) {
+                                    var uuid = getCurUserIdentify();
+                                    $.LoadingOverlay("show");
+
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '{% url "purchase-gift" %}',
+                                        data: { gift_type: gift_type, gift_price: gift_price, payment_method_nonce: payload.nonce, uuid: uuid },
+                                        success: function (data) {
+                                            $.LoadingOverlay("hide");
+
+                                            alert(data['status'] + ' : ' + data['message']);
+                                        }
+                                    })
+                                });
+                            },
+
+                            onCancel: function (data) {
+                                console.log('checkout.js payment cancelled', JSON.stringify(data, 0, 2));
+                            },
+
+                            onError: function (err) {
+                                console.error('checkout.js error', err);
+                            },
+
+                            commit: true
+                        }, '#paypal-button').then(function () {
+                            $('.gift-payments').LoadingOverlay("hide");
+                            console.log('paypal loaded successfully!');
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+
     <script type="text/javascript" src="{% static "javascripts/gift.js" %}"></script>
 
 {% endblock %}

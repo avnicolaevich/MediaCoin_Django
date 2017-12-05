@@ -51,3 +51,5 @@ class GiftCode(models.Model):
         decimal_places=8,
         default=Decimal("0.0")
     )
+    created_at = models.DateTimeField(default=datetime.datetime.now)
+    updated_at = models.DateTimeField(default=datetime.datetime.now)

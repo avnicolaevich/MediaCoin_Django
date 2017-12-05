@@ -1,4 +1,6 @@
 import datetime
+import braintree
+from decimal import Decimal
 
 from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice
 
@@ -19,6 +21,48 @@ def purchaseGiftCard(request):
 
     return render(request, 'mediacoin/purchase-gift.html', {'gift_prices': gift_prices})
 
+
+# purchase gift promo code
+def purchaseGiftPromoCode(request):
+    if request.method == 'POST':
+        uuid = request.POST.get('uuid', '')
+        gift_type = request.POST.get('gift_type', '')
+        gift_price = request.POST.get('gift_price', '')
+        payment_nonce = request.POST.get('payment_method_nonce')
+
+        if uuid == '' or gift_type == '' or gift_price == '':
+            return JsonResponse({'status': 'failed', 'message': 'Error in ajax call!'})
+
+        if gift_type == 'buy-for-me':
+            result = braintree.Transaction.sale({
+                "amount": gift_price,
+                "payment_method_nonce": payment_nonce,
+                "options": {
+                    "submit_for_settlement": True
+                },
+                # "custom_fields": {
+                #     "Referral_ID": uuid,
+                #     "Amount": gift_price,
+                #     "Type": "Buy For Me"
+                # }
+            })
+
+            if result.is_success:
+                referral = Referral.objects.get(referral_id=uuid)
+                gift_code = GiftCode(referral_id=referral.id, type=True, amount=Decimal(gift_price))
+                gift_code.updated_at = datetime.datetime.now()
+                gift_code.save()
+
+                return JsonResponse({'status': 'success', 'message': 'Successfully purchased!'})
+            else:
+                return JsonResponse({'status': 'failed', 'message': 'Connection error with Braintree System! Please try again!'})
+        else:
+            return JsonResponse({'status': 'failed', 'message': 'Error in ajax call!'})
+
+
+def getClientToken(request):
+    if request.method == 'POST':
+        return JsonResponse({'client_token': braintree.ClientToken.generate()})
 
 # register Referral ID if not exists
 def registerUUID(request):
