@@ -26,6 +26,8 @@ urlpatterns = [
 
     # landing page
     url(r'^$', views.index, name='index'),
+    # demo page
+    url(r'^demo/$', views.demo, name='demo'),
 
     # check uuid in db and if not stored in db, add new one - works for both of logged in user and not user
     url(r'^register-uuid$', views.registerUUID, name='register-uuid'),

@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block title %} Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static "stylesheets/index.css" %}" rel="stylesheet">
+
+{% endblock %}
 
 {% block content %}
 
@@ -13,5 +21,11 @@
     {% include "mediacoin/partials/section-funding-pre-ico.html" %}
     {% include "mediacoin/partials/section-team-freebie.html" %}
     {% include "mediacoin/partials/section-hiring.html" %}
+
+{% endblock %}
+
+{% block page-scripts %}
+
+    <script type="text/javascript" src="{% static "javascripts/index.js" %}"></script>
 
 {% endblock %}

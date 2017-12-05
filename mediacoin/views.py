@@ -5,8 +5,13 @@ from mediacoin.models import Transaction, Referral
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 
+# index view page
 def index(request):
 	return render(request, 'mediacoin/index.html')
+
+# demo view page
+def demo(request):
+	return render(request, 'mediacoin/demo.html')
 
 
 # register Referral ID if not exists

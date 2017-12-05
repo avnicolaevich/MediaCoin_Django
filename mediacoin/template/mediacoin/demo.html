@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} DEMO | Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static "stylesheets/demo.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section space-for-header"></div>
+
+    <div class="section demo">
+        <div class="container">
+            <div class="row">
+                <div class="title-area">
+                    <h2>
+                        <a href="{% url 'index' %}" title="Simplest possible examples MediaCoin client.">MediaCoin Demo</a> Basic Client Example
+                    </h2>
+                    <div class="separator separator-danger"><i class="fa fa-youtube-play" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <video autoplay="" controls="">
+                        <source src="{% static "media/test.webm" %}" type="video/webm">
+                        <p>This browser does not support the video element.</p>
+                    </video>
+
+                    <p id="videoSrc"></p>
+
+                    <p>This demo uses extensions in HTML5 to securely deliver encrypted content. The file can not be viewed without SSL. You are welcome to <a href="{% static "media/test.webm" %}">check the source file</a>. The full client will use a browser wallet plugin and blockchain to pay for a decryption key.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block page-scripts %}
+
+    <script type="text/javascript" src="{% static "javascripts/demo.js" %}"></script>
+
+{% endblock %}

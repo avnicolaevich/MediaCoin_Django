@@ -1,0 +1,23 @@
+.demo {
+    text-align: center;
+}
+
+video {
+    background: #222;
+    margin: 0 0 20px 0;
+    width: initial;
+}
+
+@media screen and (max-width: 500px) {
+    canvas {
+        background-color: #ccc;
+        max-width: 100%;
+        width: 100%;
+    }
+    audio {
+        max-width: 100%;
+    }
+    video {
+        width: 100%;
+    }
+}
