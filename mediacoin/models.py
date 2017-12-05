@@ -39,3 +39,15 @@ class Referral(models.Model):
 
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_at = models.DateTimeField(default=datetime.datetime.now)
+
+class GiftPrice(models.Model):
+    price = models.IntegerField(default=0)
+
+class GiftCode(models.Model):
+    referral = models.ForeignKey('Referral')
+    type = models.BooleanField(default=True)
+    amount = models.DecimalField(
+        max_digits=16,
+        decimal_places=8,
+        default=Decimal("0.0")
+    )

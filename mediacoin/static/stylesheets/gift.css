@@ -1,0 +1,31 @@
+.gift-promo-code .each-gift {
+    margin: 0 0.5%;
+    padding-top: 30px;
+    width: 24%;
+
+    -moz-box-shadow: 0px 0px 15px rgba(175,175,175,.5);
+    -webkit-box-shadow: 0px 0px 15px rgba(175,175,175,.5);
+    box-shadow: 0px 0px 15px rgba(175,175,175,.5);
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=true, ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+}
+.gift-promo-code .each-gift .actions {
+    margin-top: 25px;
+}
+.gift-promo-code .each-gift .actions .btn {
+    padding: 8px 15px;
+    margin-top: 10px;
+}
+.gift-promo-code .each-gift .icon i.fa-usd {
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 992px) {
+    .gift-promo-code .each-gift {
+        margin: auto;
+        width: auto;
+        max-width: 300px;
+    }
+}

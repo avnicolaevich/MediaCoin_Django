@@ -1,6 +1,6 @@
 import datetime
 
-from mediacoin.models import Transaction, Referral
+from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice
 
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
@@ -12,6 +12,12 @@ def index(request):
 # demo view page
 def demo(request):
 	return render(request, 'mediacoin/demo.html')
+
+# purchase gift promo code page
+def purchaseGiftCard(request):
+    gift_prices = GiftPrice.objects.all()
+
+    return render(request, 'mediacoin/purchase-gift.html', {'gift_prices': gift_prices})
 
 
 # register Referral ID if not exists

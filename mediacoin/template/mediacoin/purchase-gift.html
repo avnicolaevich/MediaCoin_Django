@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Purchase Gift Card | Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static "stylesheets/gift.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section space-for-header"></div>
+
+    {% include "mediacoin/partials/section-gift.html" %}
+
+{% endblock %}
+
+{% block page-scripts %}
+
+    <script type="text/javascript" src="{% static "javascripts/gift.js" %}"></script>
+
+{% endblock %}

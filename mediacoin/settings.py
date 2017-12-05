@@ -119,6 +119,20 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Braintree environment
+BRAINTREE_ENV = 'sandbox'
+BRAINTREE_MERCHANT_ID = 'cq3mb3rx5sdrpzwy'
+BRAINTREE_PUBLIC_KEY = 'jkgmgzsw9367kzcj'
+BRAINTREE_PRIVATE_KEY = 'bd323d6c0b5eb08d68aff8a59bcbd074'
+
+# Mail Settings
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'cool.webpro17@gmail.com'
+EMAIL_HOST_PASSWORD = 'coolDev!@#4'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 

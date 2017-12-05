@@ -1,0 +1,30 @@
+[
+  {
+    "model": "mediacoin.giftprice",
+    "pk": 1,
+    "fields": {
+      "price": 5
+    }
+  },
+  {
+    "model": "mediacoin.giftprice",
+    "pk": 2,
+    "fields": {
+      "price": 20
+    }
+  },
+  {
+    "model": "mediacoin.giftprice",
+    "pk": 3,
+    "fields": {
+      "price": 50
+    }
+  },
+  {
+    "model": "mediacoin.giftprice",
+    "pk": 4,
+    "fields": {
+      "price": 100
+    }
+  },
+]

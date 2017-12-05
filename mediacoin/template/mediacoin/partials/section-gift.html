@@ -1,0 +1,26 @@
+<div class="section gift-promo-code">
+    <div class="container">
+        <div class="row">
+            <div class="title-area">
+                <h2>Gift Promo Code Services</h2>
+                <div class="separator separator-danger"><i class="fa fa-usd" aria-hidden="true"></i></div>
+                <p class="description">Licensed online music and video delivery on Our MediaCoin</p>
+            </div>
+        </div>
+        <div class="row gifts">
+            {% for each_gp in gift_prices %}
+            <div class="col-md-3 each-gift">
+                <div class="info-icon">
+                    <div class="icon text-danger">
+                        <i class="fa fa-usd" aria-hidden="true"></i>{{ each_gp.price }}
+                    </div>
+                    <h3 class="actions">
+                        <a class="btn btn-default" data-type="buy-for-me" data-gift_id="{{ each_gp.id }}">Buy For Me</a>
+                        <a class="btn btn-default" data-type="gift-for-friend" data-gift_id="{{ each_gp.id }}">Gift For Friend</a>
+                    </h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
