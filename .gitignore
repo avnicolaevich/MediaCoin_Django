@@ -11,7 +11,7 @@ pip-selfcheck.json
 /local
 /manage.py
 /include
-mediacoin/manage.py
+manage.py
 mediacoin/venv
 .idea
 venv
