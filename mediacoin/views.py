@@ -1,5 +1,6 @@
 import datetime
 import braintree
+
 from decimal import Decimal
 
 from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice
@@ -53,7 +54,7 @@ def purchaseGiftPromoCode(request):
                 gift_code.updated_at = datetime.datetime.now()
                 gift_code.save()
 
-                return JsonResponse({'status': 'success', 'message': 'Successfully purchased!'})
+                return JsonResponse({'status': 'success', 'message': 'Purchased Gift Promo Code successfully!'})
             else:
                 return JsonResponse({'status': 'failed', 'message': 'Connection error with Braintree System! Please try again!'})
         else:

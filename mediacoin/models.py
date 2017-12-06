@@ -1,4 +1,5 @@
 import datetime
+import uuid
 
 from decimal import Decimal
 from django.db import models
@@ -46,6 +47,7 @@ class GiftPrice(models.Model):
 class GiftCode(models.Model):
     referral = models.ForeignKey('Referral')
     type = models.BooleanField(default=True)
+    code = models.UUIDField(default=uuid.uuid4, editable=False)
     amount = models.DecimalField(
         max_digits=16,
         decimal_places=8,
