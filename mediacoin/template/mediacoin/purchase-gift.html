@@ -7,12 +7,15 @@
 {% block page-styles %}
 
     <link href="{% static "stylesheets/gift.css" %}" rel="stylesheet">
+    <link href="{% static "stylesheets/modal.css" %}" rel="stylesheet">
 
 {% endblock %}
 
 {% block content %}
 
     <div class="section space-for-header"></div>
+
+    {% include "mediacoin/partials/info-modal.html" %}
 
     {% include "mediacoin/partials/section-gift.html" %}
 
@@ -31,6 +34,7 @@
 
     <script>
         var gift_type = 'buy-for-me', gift_price = 5;
+        var recipient_email = '', recipient_name = '', recipient_message = '', your_name = '';
         $(document).ready(function () {
             $('.gift-payments').LoadingOverlay("show", { zIndex: 999 });
 
@@ -80,16 +84,29 @@
                                     var uuid = getCurUserIdentify();
                                     $.LoadingOverlay("show");
 
-                                    $.ajax({
-                                        type: 'POST',
-                                        url: '{% url "purchase-gift" %}',
-                                        data: { gift_type: gift_type, gift_price: gift_price, payment_method_nonce: payload.nonce, uuid: uuid },
-                                        success: function (data) {
-                                            $.LoadingOverlay("hide");
+                                    if (gift_type == 'buy-for-me') {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '{% url "purchase-gift" %}',
+                                            data: { gift_type: gift_type, gift_price: gift_price, payment_method_nonce: payload.nonce, uuid: uuid },
+                                            success: function (data) {
+                                                $.LoadingOverlay("hide");
 
-                                            alert(data['status'] + ' : ' + data['message']);
-                                        }
-                                    })
+                                                alert(data['status'] + ' : ' + data['message']);
+                                            }
+                                        });
+                                    } else {
+                                        $.ajax({
+                                            type: 'POST',
+                                            url: '{% url "purchase-gift" %}',
+                                            data: { gift_type: gift_type, gift_price: gift_price, payment_method_nonce: payload.nonce, uuid: uuid, recipient_email: recipient_email, recipient_name: recipient_name, recipient_message: recipient_message, your_name: your_name },
+                                            success: function (data) {
+                                                $.LoadingOverlay("hide");
+
+                                                alert(data['status'] + ' : ' + data['message']);
+                                            }
+                                        });
+                                    }
                                 });
                             },
 
