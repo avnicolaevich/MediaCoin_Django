@@ -55,3 +55,11 @@ class GiftCode(models.Model):
     )
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_at = models.DateTimeField(default=datetime.datetime.now)
+
+    def get_code(self):
+        return '%s' % (self.code)
+
+class GiftRecipient(models.Model):
+    gift_code = models.ForeignKey('GiftCode')
+    email = models.EmailField()
+    name = models.CharField(max_length=70, blank=True, null=True)

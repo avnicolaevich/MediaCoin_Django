@@ -3,10 +3,11 @@ import braintree
 
 from decimal import Decimal
 
-from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice
+from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice, GiftRecipient
 
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
+from django.core.mail import send_mail
 
 # index view page
 def index(request):
@@ -34,31 +35,56 @@ def purchaseGiftPromoCode(request):
         if uuid == '' or gift_type == '' or gift_price == '':
             return JsonResponse({'status': 'failed', 'message': 'Error in ajax call!'})
 
-        if gift_type == 'buy-for-me':
-            result = braintree.Transaction.sale({
-                "amount": gift_price,
-                "payment_method_nonce": payment_nonce,
-                "options": {
-                    "submit_for_settlement": True
-                },
-                # "custom_fields": {
-                #     "Referral_ID": uuid,
-                #     "Amount": gift_price,
-                #     "Type": "Buy For Me"
-                # }
-            })
+        result = braintree.Transaction.sale({
+            "amount": gift_price,
+            "payment_method_nonce": payment_nonce,
+            "options": {
+                "submit_for_settlement": True
+            },
+            # "custom_fields": {
+            #     "Referral_ID": uuid,
+            #     "Amount": gift_price,
+            #     "Type": "Buy For Me"
+            # }
+        })
 
-            if result.is_success:
-                referral = Referral.objects.get(referral_id=uuid)
+        if result.is_success:
+            referral = Referral.objects.get(referral_id=uuid)
+
+            if gift_type == 'buy-for-me':
                 gift_code = GiftCode(referral_id=referral.id, type=True, amount=Decimal(gift_price))
                 gift_code.updated_at = datetime.datetime.now()
                 gift_code.save()
 
                 return JsonResponse({'status': 'success', 'message': 'Purchased Gift Promo Code successfully!'})
-            else:
-                return JsonResponse({'status': 'failed', 'message': 'Connection error with Braintree System! Please try again!'})
+            else: # gift for friend
+                gift_code = GiftCode(referral_id=referral.id, type=False, amount=Decimal(gift_price))
+                gift_code.updated_at = datetime.datetime.now()
+                gift_code.save()
+
+                recipient_email = request.POST.get('recipient_email')
+                recipient_name = request.POST.get('recipient_name')
+                recipient_message = request.POST.get('recipient_message')
+                your_name = request.POST.get('your_name')
+
+                message = 'Hi, <b>' + recipient_name + '</b>!' + '<br/>Just received Gift Code is purchased over <b>$' + gift_price + '</b> from ' + your_name + '.<br/>' + '*** Gift Promo Code ***<br/>' + gift_code.get_code()
+                if recipient_email != '':
+                    message += '<br/><br/>' + your_name + '`s message: ' + recipient_message
+                message += '<br/><br/><br/>MediaCoin Security Team'
+
+                send_mail(
+                    'MediaCoin Gift Code from ' + your_name,
+                    message,
+                    'security@mediacoin.com',
+                    [recipient_email],
+                    fail_silently=False
+                )
+
+                gift_recipient = GiftRecipient(gift_code_id=gift_code.id, email=recipient_email, name=recipient_name)
+
+                return JsonResponse({'status': 'success', 'message': 'Sent Gift Promo Code to ' + recipient_name + ' successfully!'})
         else:
-            return JsonResponse({'status': 'failed', 'message': 'Error in ajax call!'})
+            return JsonResponse({'status': 'failed', 'message': 'Connection error with Braintree System! Please try again!'})
 
 
 def getClientToken(request):
