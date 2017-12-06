@@ -67,10 +67,9 @@ def purchaseGiftPromoCode(request):
                 recipient_message = request.POST.get('recipient_message')
                 your_name = request.POST.get('your_name')
 
-                message = 'Hi, <b>' + recipient_name + '</b>!' + '<br/>Just received Gift Code is purchased over <b>$' + gift_price + '</b> from ' + your_name + '.<br/>' + '*** Gift Promo Code ***<br/>' + gift_code.get_code()
+                message = 'Hi, ' + recipient_name + '!' + ' Just received Gift Code is purchased over $' + gift_price + ' from ' + your_name + '. ' + 'Gift Promo Code: ' + gift_code.get_code()
                 if recipient_email != '':
-                    message += '<br/><br/>' + your_name + '`s message: ' + recipient_message
-                message += '<br/><br/><br/>MediaCoin Security Team'
+                    message += ' ***' + your_name + '`s message: ' + recipient_message
 
                 send_mail(
                     'MediaCoin Gift Code from ' + your_name,
