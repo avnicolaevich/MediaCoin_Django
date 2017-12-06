@@ -117,3 +117,31 @@
     margin-top: 30px;
     text-align: center;
 }
+
+@media screen and (max-width: 992px) {
+    .gift-promo-code .gift-payments {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    .gift-promo-code .gift-descriptions {
+        margin-top: 50px;
+        padding-left: 15px;
+    }
+    .gift-promo-code .gift-descriptions .gd-content .info-icon {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .space-for-header {
+        padding: 35px 0;
+    }
+    .gift-promo-code .each-gift .icon {
+        padding-top: 8px;
+        padding-bottom: 6px;
+        font-size: 16px;
+    }
+    .gift-promo-code .payments-inputs .gift-price {
+        font-size: 16px;
+    }
+}

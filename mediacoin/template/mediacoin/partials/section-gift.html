@@ -2,13 +2,13 @@
 
 <div class="section gift-promo-code">
     <div class="container">
-        <div class="col-md-4 gift-payments">
+        <div class="col-md-5 gift-payments">
             <div class="secure-logo">
                 <img src="{% static 'images/gift-secure.jpeg' %}">
             </div>
             <div class="payments clearfix">
                 {% for each_gp in gift_prices %}
-                <div class="col-md-3 each-gift {% if each_gp.id == 1 %}activated{% endif %}" data-price="{{ each_gp.price }}">
+                <div class="col-md-3 col-xs-3 each-gift {% if each_gp.id == 1 %}activated{% endif %}" data-price="{{ each_gp.price }}">
                     <div class="info-icon">
                         <div class="icon">
                             <i class="fa fa-usd" aria-hidden="true"></i>{{ each_gp.price }}
@@ -23,14 +23,14 @@
             </div>
             <p class="pts-description">Please select type of Gift.</p>
             <div class="payments-types clearfix">
-                <div class="col-md-6 each-gift gift-type activated" data-type="buy-for-me">
+                <div class="col-md-6 col-xs-6 each-gift gift-type activated" data-type="buy-for-me">
                     <div class="info-icon">
                         <div class="icon">
                             Buy For Me
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 each-gift gift-type" data-type="gift-for-friend">
+                <div class="col-md-6 col-xs-6 each-gift gift-type" data-type="gift-for-friend">
                     <div class="info-icon">
                         <div class="icon">
                             Gift
@@ -42,7 +42,7 @@
                 <div id="paypal-button"></div>
             </div>
         </div>
-        <div class="col-md-8 gift-descriptions">
+        <div class="col-md-7 gift-descriptions">
             <div class="row gd-header">
                 <div class="title-area">
                     <h2>Gift Promo Service</h2>
