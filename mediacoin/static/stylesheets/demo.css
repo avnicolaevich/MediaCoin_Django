@@ -8,7 +8,7 @@ video {
     width: initial;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1023px) {
     canvas {
         background-color: #ccc;
         max-width: 100%;

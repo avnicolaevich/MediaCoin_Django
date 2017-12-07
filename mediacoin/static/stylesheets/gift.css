@@ -1,0 +1,156 @@
+.navbar.navbar-fixed-top {
+    z-index: 1000;
+}
+.gift-promo-code .secure-logo img {
+    width: 100%;
+    height: auto;
+}
+.gift-promo-code .each-gift {
+    /*width: 25%;*/
+
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3, MakeShadow=true, ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
+
+    cursor: pointer;
+    color: #777;
+
+    border-top: 1px solid rgba(175,175,175,.5);
+    border-right: 1px solid rgba(175,175,175,.5);
+    border-bottom: 1px solid rgba(175,175,175,.5);
+}
+.gift-promo-code .each-gift:first-child {
+    border-left: 1px solid rgba(175,175,175,.5);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.gift-promo-code .each-gift:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.gift-promo-code .each-gift .icon {
+    padding-top: 15px;
+    font-size: 20px;
+    line-height: initial;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    color: inherit;
+}
+.gift-promo-code .payments {
+    margin-top: 40px;
+}
+.gift-promo-code .payments-inputs {
+    height: 48px;
+    margin-top: 10px;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #EEEEEE;
+    border-radius: 5px;
+
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .8s ease-out;
+    -o-transition: all .8s ease-out;
+    transition: all .8s ease-out;
+}
+.gift-promo-code .payments-inputs.focused {
+    -moz-box-shadow: 0px 0px 8px rgba(47, 79, 79, .8);
+    -webkit-box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+    box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+}
+.gift-promo-code .payments-inputs label {
+    width: 30%;
+    background-color: #c5a47e;
+    color: #fff;
+    line-height: 34px;
+    text-align: center;
+}
+.gift-promo-code .payments-inputs .gift-price {
+    text-align: right;
+    width: 68.5%;
+    font-size: 20px;
+    border: none;
+    height: 100%;
+}
+.gift-promo-code .payments-inputs .gift-price:focus, .gift-promo-code .payments-inputs .gift-price:active {
+    outline: none;
+}
+.gift-promo-code .gift-descriptions {
+    padding-left: 50px;
+}
+.gift-promo-code .gift-descriptions .gd-header .title-area {
+    margin-bottom: 40px;
+}
+.gift-promo-code .gift-descriptions .gd-content .info-icon {
+    text-align: left;
+}
+.gift-promo-code .pts-description {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.gift-promo-code .payments-types {
+    margin-top: 2px;
+}
+.gift-promo-code .payments-types .gift-type {
+    color: #777;
+}
+.gift-promo-code .each-gift.activated {
+    background: darkslategrey;
+    color: #eee;
+
+    -moz-box-shadow: 0px 0px 8px rgba(47, 79, 79, .8);
+    -webkit-box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+    box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+}
+.gift-promo-code .each-gift:hover, .gift-promo-code .each-gift:active, .gift-promo-code .each-gift:focus {
+    background: darkslategrey;
+    color: #eee;
+
+    -moz-box-shadow: 0px 0px 8px rgba(47, 79, 79, .8);
+    -webkit-box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+    box-shadow: 0px 0px 8px rgba(47, 79, 79,.8);
+}
+.gift-promo-code .payments-actions {
+    margin-top: 30px;
+    text-align: center;
+}
+.gift-promo-code .gff-descriptions {
+    padding-top: 30px;
+    text-align: center;
+    display: none;
+}
+.gift-promo-code .gff-descriptions p {
+    font-size: 16px;
+    color: #57b5e3;
+}
+
+@media screen and (max-width: 992px) {
+    .gift-promo-code .gift-payments {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+    .gift-promo-code .gift-descriptions {
+        margin-top: 50px;
+        padding-left: 15px;
+    }
+    .gift-promo-code .gift-descriptions .gd-content .info-icon {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .space-for-header {
+        padding: 35px 0;
+    }
+    .gift-promo-code .each-gift .icon {
+        padding-top: 8px;
+        padding-bottom: 6px;
+        font-size: 16px;
+    }
+    .gift-promo-code .payments-inputs .gift-price {
+        font-size: 16px;
+    }
+}

@@ -28,8 +28,13 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     # demo page
     url(r'^demo/$', views.demo, name='demo'),
+    # purchase gift promo code page
+    url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),
 
     # check uuid in db and if not stored in db, add new one - works for both of logged in user and not user
     url(r'^register-uuid$', views.registerUUID, name='register-uuid'),
+    # gift purchase functions
+    url(r'^purchase-gift-card/purchase-gift$', views.purchaseGiftPromoCode, name='purchase-gift'),
+    url(r'^purchase-gift-card/get-braintree-token$', views.getClientToken, name='get-braintree-token')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
