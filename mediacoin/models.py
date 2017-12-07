@@ -1,4 +1,5 @@
 import datetime
+import uuid
 
 from decimal import Decimal
 from django.db import models
@@ -39,3 +40,26 @@ class Referral(models.Model):
 
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_at = models.DateTimeField(default=datetime.datetime.now)
+
+class GiftPrice(models.Model):
+    price = models.IntegerField(default=0)
+
+class GiftCode(models.Model):
+    referral = models.ForeignKey('Referral')
+    type = models.BooleanField(default=True)
+    code = models.UUIDField(default=uuid.uuid4, editable=False)
+    amount = models.DecimalField(
+        max_digits=16,
+        decimal_places=8,
+        default=Decimal("0.0")
+    )
+    created_at = models.DateTimeField(default=datetime.datetime.now)
+    updated_at = models.DateTimeField(default=datetime.datetime.now)
+
+    def get_code(self):
+        return '%s' % (self.code)
+
+class GiftRecipient(models.Model):
+    gift_code = models.ForeignKey('GiftCode')
+    email = models.EmailField()
+    name = models.CharField(max_length=70, blank=True, null=True)
