@@ -26,6 +26,8 @@ urlpatterns = [
 
     # landing page
     url(r'^$', views.index, name='index'),
+    # referral user page
+    url(r'^u/(?P<referral_link_path>).*/$', views.logWithReferralLinkPath, name='u-referral-link-path'),
     # demo page
     url(r'^demo/$', views.demo, name='demo'),
     # purchase gift promo code page

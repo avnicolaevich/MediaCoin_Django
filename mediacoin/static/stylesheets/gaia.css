@@ -3808,8 +3808,35 @@ body {
     color: #FFFFFF;
     opacity: 1;
 }
+.referral-link-path {
+    position: fixed;
+    height: 47px;
+    margin-top: 23px;
+    margin-left: 250px;
+}
+.referral-link-path, .referral-link-path > a, .referral-link-path > span {
+    color: #FFFFFF;
+    opacity: 0.75;
+}
+.referral-link-path > a {
+    cursor: pointer;
+}
+.referral-link-path > a:hover, .referral-link-path > a:active, .referral-link-path > a:focus {
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+    .referral-link-path {
+        margin-left: 170px;
+    }
+}
 
 @media screen and (max-width: 992px) {
+    .referral-link-path {
+        display: none;
+    }
+
     .navbar-default .navbar-nav > li > a:not(.btn) {
         color: #FFFFFF;
     }
@@ -3819,4 +3846,14 @@ body {
     .navbar > .container .navbar-brand {
 		padding-left: 10px;
 	}
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-default .navbar-nav > li > a:not(.btn) {
+        color: #333;
+        opacity: .8;
+    }
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:not(.btn):hover, .navbar-default .navbar-nav > .active > a:not(.btn):focus, .navbar-default .navbar-nav > li > a:not(.btn):hover, .navbar-default .navbar-nav > li > a:not(.btn):focus {
+        color: #333;
+    }
 }

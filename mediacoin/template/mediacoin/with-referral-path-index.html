@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Referral | Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static "stylesheets/demo.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section space-for-header"></div>
+
+    {% include "mediacoin/partials/section-wrp-status.html" %}
+
+{% endblock %}
+
+{% block page-scripts %}
+{% endblock %}
