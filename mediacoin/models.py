@@ -37,9 +37,15 @@ class Referral(models.Model):
     author = models.ForeignKey('auth.User', blank=True, null=True)
     referral_id = models.CharField(max_length=36)
     web3addr = models.CharField(max_length=50, blank=True, null=True)
+    referral_link_path = models.CharField(max_length=10, default='')
+    count = models.IntegerField(default=1)
+    times = models.IntegerField(default=0)
 
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_at = models.DateTimeField(default=datetime.datetime.now)
+
+    def get_id_str(self):
+        return '%s' % (self.id)
 
 class GiftPrice(models.Model):
     price = models.IntegerField(default=0)
@@ -63,3 +69,7 @@ class GiftRecipient(models.Model):
     gift_code = models.ForeignKey('GiftCode')
     email = models.EmailField()
     name = models.CharField(max_length=70, blank=True, null=True)
+
+class ReferralTrack(models.Model):
+    referral = models.ForeignKey('Referral', null=True, related_name="referral")
+    tracked_referral = models.ForeignKey('Referral', null=True, related_name="tracked_referral")

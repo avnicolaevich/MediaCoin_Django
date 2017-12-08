@@ -1,10 +1,12 @@
 import datetime
 import braintree
+import random
+
+from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice, GiftRecipient, ReferralTrack
+
+from django.conf import settings
 
 from decimal import Decimal
-
-from mediacoin.models import Transaction, Referral, GiftCode, GiftPrice, GiftRecipient
-
 from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from django.core.mail import send_mail
@@ -22,6 +24,10 @@ def purchaseGiftCard(request):
     gift_prices = GiftPrice.objects.all()
 
     return render(request, 'mediacoin/purchase-gift.html', {'gift_prices': gift_prices})
+
+# Log with Referral Link Path
+def logWithReferralLinkPath(request, referral_link_path):
+    return render(request, 'mediacoin/demo.html')
 
 
 # purchase gift promo code
@@ -92,17 +98,33 @@ def getClientToken(request):
 
 # register Referral ID if not exists
 def registerUUID(request):
-	if request.method == 'POST':
-		uuid = request.POST.get('uuid', '')
+    if request.method == 'POST':
+        uuid = request.POST.get('uuid', '')
 
-		if uuid == '':
-			return JsonResponse({'status': 'failed', 'message': 'UUID is empty!'})
+        if uuid == '':
+            return JsonResponse({'status': 'failed', 'message': 'UUID is empty!'})
 
-		if Referral.objects.filter(referral_id=uuid).exists():
-			referral = Referral.objects.get(referral_id=uuid)
-			referral.updated_at = datetime.datetime.now()
-		else:
-			referral = Referral(referral_id=uuid)
-		referral.save()
+        if Referral.objects.filter(referral_id=uuid).exists():
+            referral = Referral.objects.get(referral_id=uuid)
+            referral.count = referral.count + 1
+            referral.updated_at = datetime.datetime.now()
+        else:
+            token = ''.join(random.choice(settings.AVAILABLE_CHARACTERS_FOR_TOKEN) for i in range(10))
+            referral = Referral(referral_id=uuid)
+            referral.save()
+            token_str = referral.get_id_str() + token
+            referral.referral_link_path = token_str[:10]
+        referral.save()
 
-		return JsonResponse({'status': 'success'})
+        wrp_flag = request.POST.get('wrp_flag')
+        if (wrp_flag == 'true'):
+            other_wlp = request.POST.get('referral_link_path')
+            other_referral = Referral.objects.get(referral_link_path=other_wlp)
+            if not ReferralTrack.objects.filter(referral=referral, tracked_referral=other_referral).exists():
+                if other_referral.referral_id != referral.referral_id:
+                    other_referral.times = other_referral.times + 1
+                    other_referral.save()
+                    referral_track = ReferralTrack(referral_id=referral.id, tracked_referral_id=other_referral.id)
+                    referral_track.save()
+
+        return JsonResponse({'status': 'success', 'referral_link_path': referral.referral_link_path, 'referral_times': referral.times})

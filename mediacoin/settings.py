@@ -132,6 +132,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'cool.webpro17@gmail.com'
 EMAIL_HOST_PASSWORD = 'coolDev!@#4'
 
+# Custom Available For token
+AVAILABLE_CHARACTERS_FOR_TOKEN = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
