@@ -7,18 +7,15 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#">Home</a></li>
+                                <a href="{% url 'index' %}">Home</a></li>
                             <li>
-                                <a href="#">Find offers</a>
+                                <a href="{% url 'demo' %}">Demo</a>
                             </li>
                             <li>
-                                <a href="#">Discover Projects</a>
+                                <a href="{% url 'purchase-gift-card' %}">Buy Gift Promo Code</a>
                             </li>
                             <li>
-                                <a href="#">Our Portfolio</a>
-                            </li>
-                            <li>
-                                <a href="#">About Us</a>
+                                <a href="#features">Our Features</a>
                             </li>
                         </ul>
                     </nav>
@@ -74,23 +71,26 @@
                     <nav>
                         <ul>
                             <li>
-                                <a href="#" class="btn btn-social btn-facebook btn-simple">
+                                <!-- Facebook -->
+                                <a href="http://www.facebook.com/sharer.php?u=https://www.facebook.com/QMediaCoin/" target="_blank">
                                     <i class="fa fa-facebook-square"></i> Facebook
                                 </a>
                             </li>
+{#                            <li>#}
+{#                                <a href="#" class="btn btn-social btn-dribbble btn-simple">#}
+{#                                    <i class="fa fa-dribbble"></i> Dribbble#}
+{#                                </a>#}
+{#                            </li>#}
                             <li>
-                                <a href="#" class="btn btn-social btn-dribbble btn-simple">
-                                    <i class="fa fa-dribbble"></i> Dribbble
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-social btn-twitter btn-simple">
+                                <!-- Twitter -->
+                                <a href="https://twitter.com/share?url=https://twitter.com/QMediaCoin&amp;text=Recommend%20MediaCoin&amp;hashtags=mediacoinsharebuttons" target="_blank">
                                     <i class="fa fa-twitter"></i> Twitter
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-social btn-reddit btn-simple">
-                                    <i class="fa fa-google-plus-square"></i> Google+
+                                <!-- Reddit -->
+                                <a href="http://reddit.com/submit?url=https://www.reddit.com/r/MediaCoin/&amp;title=Recommend MediaCoin" target="_blank">
+                                    <i class="fa fa-reddit" aria-hidden="true"></i> Reddit
                                 </a>
                             </li>
                         </ul>
