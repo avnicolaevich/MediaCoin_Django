@@ -73,6 +73,9 @@
 .section.features .info-icon .custom-h3 {
 	margin-top: 0;
 }
+.section.features {
+	padding-bottom: 0;
+}
 
 .ico-stretch-goals .each-goal .info-icon .icon i.fa {
 	margin-right: 20px;
