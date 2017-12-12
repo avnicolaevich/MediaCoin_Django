@@ -20,6 +20,9 @@
     background-position: center;
     background-repeat: repeat;
 }
+.ico-token-budget img {
+	margin-top: 60px;
+}
 .pre-ico-budget .info-icon .custom-description, .pre-ico-budget .info-icon .custom-h3 {
 	text-align: right;
 }
@@ -28,37 +31,95 @@
 }
 .info-icon .custom-h3, .info-icon .custom-h3 {
 	font-weight: bold;
-	padding-bottom: 15px; 
+	padding-bottom: 15px;
 }
 .info-icon img {
-	width: 100%;
+	/*width: 100%;*/
+	width: 200px;
+	margin-top: 20px;
 }
 
 .section.features .each-feature {
-	padding: 30px 0;
+	padding: 100px 0;
 }
-.section.features .each-feature:nth-child(odd) {
-	background: #F2F2F2;
-	/* Old browsers */
-	background: -moz-linear-gradient(-45deg, #F2F2F2 0%, #F5F5F5 100%);
-	/* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, #F2F2F2), color-stop(100%, #F5F5F5));
-	/* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg, #F2F2F2 0%, #F5F5F5 100%);
-	/* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg, #F2F2F2 0%, #F5F5F5 100%);
-	/* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg, #F2F2F2 0%, #F5F5F5 100%);
-	/* IE10+ */
-	background: linear-gradient(135deg, #F2F2F2 0%, #F5F5F5 100%);
-	/* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#F2F2F2', endColorstr='#F5F5F5',GradientType=1 );
+.each-feature.secure-publishing {
+	background-image: url('../images/background-images/artist-payout.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.artist-payout {
+	background-image: url('../images/background-images/content-licenses.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.no-fee-token-purchase {
+	background-image: url('../images/background-images/easy-purchase-and-payment.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.easy-purchase-and-payment {
+	background-image: url('../images/background-images/future-safe.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.no-subscription {
+	background-image: url('../images/background-images/growth-value.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.incentive-freemium {
+	background-image: url('../images/background-images/incentive-freemium.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.content-licenses {
+	background-image: url('../images/background-images/no-fee-token-purchase.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.growth-value {
+	background-image: url('../images/background-images/no-subscription.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.pricing-goals {
+	background-image: url('../images/background-images/pricing-goals.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature.future-safe {
+	background-image: url('../images/background-images/secure-publishing.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+.each-feature .description {
+  color: #ffffff;
 }
 .section.features .each-feature:nth-child(odd) .info-icon .custom-h3, .section.features .each-feature:nth-child(odd) .info-icon .custom-description {
-	text-align: left !important;	
+	text-align: left !important;
 }
 .section.features .each-feature:nth-child(even) .info-icon .custom-h3, .section.features .each-feature:nth-child(even) .info-icon .custom-description {
-	text-align: right !important;	
+	text-align: right !important;
 }
 .section.features .float-left {
 	float: left !important;
@@ -164,10 +225,10 @@
 		text-align: center !important;
 	}
 	.section.features .each-feature:nth-child(odd) .info-icon .custom-h3, .section.features .each-feature:nth-child(odd) .info-icon .custom-description {
-		text-align: center !important;	
+		text-align: center !important;
 	}
 	.section.features .each-feature:nth-child(even) .info-icon .custom-h3, .section.features .each-feature:nth-child(even) .info-icon .custom-description {
-		text-align: center !important;	
+		text-align: center !important;
 	}
 	.info-icon img {
 		width: 50%;
