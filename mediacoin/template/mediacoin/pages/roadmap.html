@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} DEMO | Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static 'stylesheets/pages/roadmap.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section space-for-header"></div>
+
+    {% include "mediacoin/partials/section-demo.html" %}
+
+{% endblock %}
+
+{% block page-scripts %}
+
+    <script type="text/javascript" src="{% static 'javascripts/pages/roadmap.js' %}"></script>
+
+{% endblock %}
