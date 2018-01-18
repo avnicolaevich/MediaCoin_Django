@@ -6,8 +6,8 @@
     font-size: 14px;
 }
 
-.goals__header h2, .goals__header h3 {
-    font-family: "Gotham-Book", Sans-Serif;
+.goals__header {
+    font-family: Gotham-Book, Sans-Serif;
 }
 
 .goals__header-text {
