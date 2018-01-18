@@ -17,3 +17,21 @@
 .goals__header-subtext {
     font-size: 1.143em;
 }
+
+.goals__header-logo {
+    background-color: #000;
+    height: 150px;
+    display:flex;
+    align-items:center;
+}
+
+.goals__header-logo:before {
+    content: '';
+    position: relative;
+    left: -100px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 100px 150px 0;
+    border-color: transparent #000000 transparent transparent;
+}
