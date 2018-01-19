@@ -1,19 +1,524 @@
-.h2-bold {
-    font-family: "Gotham-Bold", Sans-Serif;
+.section {
+    background: #000;
 }
-.goals {
-    font-family: "Gotham-Light", Sans-Serif;
-    font-size: 14px;
+.pr0 {
+    padding-right: 0;
 }
+.pl0 {
+    padding-left: 0;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.roadmap__wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: #000;
+}
+.roadmap__wrap {
+    width: 100%;
+    height: 230px;
+    position: relative;
+}
+.second__wrap {
+    padding-top: 30px;
+}
+.roadmap__snake-image {
+    position: absolute;
+    top: 0;
+    right: -138px;
+}
+.second__wrap::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 113px;
+    left: 57px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #78b4d4;
+}
+.roadmap__date,
+.roadmap__description {
+    display: inline-block;
+    vertical-align: top;
+}
+.roadmap__date-list li {
+    color: #fff;
+    font-family: 'MavenPro-Bold';
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.roadmap__description-list li {
+    color: #fff;
+    font-family: 'MavenPro-regular';
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.roadmap__date {
+    position: relative;
+}
+.first__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 76.5px;
+    left: -61px;
+    border-radius: 50%;
+    background: #78b4d4;
+}
+.description__right {
+    padding-left: 15px;
+    border-left: 2px dashed #78b4d4;
+    max-width: 260px;
+    width: 100%;
+}
+.description__left {
+    padding-right: 15px;
+    border-right: 2px dashed #efcf32;
+    max-width: 260px;
+    width: 100%;
+}
+.description__left > ul {
+    text-align: right;
+}
+.date__left {
+    margin-right: 236px;
+    max-width: 75px;
+    padding-left: 5px;
+}
+.date__right {
+    margin-left: 236px;
+    max-width: 75px;
+    padding-right: 5px;
+}
+.third__wrap {
+    top: -40px;
+}
+.third__wrap::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 62px;
+    right: 4px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #efcf32;
+}
+.second__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 55.5px;
+    left: 169px;
+    border-radius: 50%;
+    background: #efcf32;
+}
+.fourth__wrap {
+    top: 103px
+}
+.fourth__wrap::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 60px;
+    left: 57px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #78b4d4;
+}
+.third__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 52.5px;
+    left: -60px;
+    border-radius: 50%;
+    background: #78b4d4;
+}
+.fifth__wrap {
+    top: 10px;
+}
+.fifth__wrap::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 62px;
+    right: 4px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #efcf32;
+}
+.fourth__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 55.5px;
+    left: 169px;
+    border-radius: 50%;
+    background: #efcf32;
+}
+.six__wrap {
+    top: 153px
+}
+.six__wrap::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 60px;
+    left: 57px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #78b4d4;
+}
+.fifth__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 52.5px;
+    left: -60px;
+    border-radius: 50%;
+    background: #78b4d4;
+}
+.seven__wrap {
+    top: 104px;
+}
+.seven__wrap::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 19px;
+    right: 4px;
+    width: 115px;
+    height: 0;
+    border-bottom: 2px dashed #efcf32;
+}
+.six__date::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 12.5px;
+    left: 169px;
+    border-radius: 50%;
+    background: #efcf32;
+}
+/*---First---step---*/
+.roadmap__wrap-image {
+    position: absolute;
+    width: 108px;
+    height: 108px;
+}
+.roadmap__wrap-image--first {
+    background: url("../../images/steps/zero.png") center no-repeat, url("../../images/steps/money_grey.png") center no-repeat;
+    top: 58.5px;
+    left: -54px;
+}
+.roadmap__wrap-image--first::before {
+    content: "0";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 71px;
+    position: absolute;
+    top: -1px;
+    left: 32px;
+    color: #434244;
+}
+/*---First---step---end*/
+/*---Second---step---*/
+.roadmap__wrap-image--second {
+    background: url("../../images/steps/one.png") center no-repeat, url("../../images/steps/money_yellow.png") center no-repeat;
+    top: 7.5px;
+    right: -109px;
+}
+.roadmap__wrap-image--second::before {
+    content: "1";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 71px;
+    position: absolute;
+    top: 0;
+    left: 32px;
+    color: #2d1f00;
+}
+/*---Second---step---end*/
+/*---Third---step---*/
+.roadmap__wrap-image--third {
+    background: url("../../images/steps/two.png") center no-repeat, url("../../images/steps/money_grey.png") center no-repeat;
+    top: 4.5px;
+    left: -54px;
+}
+.roadmap__wrap-image--third::before {
+    content: "2";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 72px;
+    position: absolute;
+    z-index: 3;
+    top: -1px;
+    left: 32px;
+    color: #434244;
+}
+/*---Third---step---end*/
+/*---Fourth---step---*/
+.roadmap__wrap-image--fourth {
+    background: url("../../images/steps/three.png") center no-repeat, url("../../images/steps/money_yellow.png") center no-repeat;
+    top: 7.5px;
+    right: -109px;
+}
+.roadmap__wrap-image--fourth::before {
+    content: "3";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 71px;
+    position: absolute;
+    z-index: 3;
+    top: -1px;
+    right: 31.5px;
+    color: #2d1f00;
+}
+/*---Fourth---step---end*/
+/*---Fifth---step---*/
+.roadmap__wrap-image--fifth {
+    background: url("../../images/steps/four.png") center no-repeat, url("../../images/steps/money_grey.png") center no-repeat;
+    top: 4.5px;
+    left: -54px;
+}
+.roadmap__wrap-image--fifth::before {
+    content: "4";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 71px;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 33px;
+    color: #434244;
+}
+/*---Fifth---step---end---*/
+/*---Six---step---*/
+.roadmap__wrap-image--six {
+    background: url("../../images/steps/five.png") center no-repeat, url("../../images/steps/money_yellow.png") center no-repeat;
+    top: -37.5px;
+    right: -109px;
+}
+.roadmap__wrap-image--six::before {
+    content: "5";
+    font-family: 'Clarendon-BT-Bold';
+    font-size: 71px;
+    position: absolute;
+    z-index: 3;
+    top: -1px;
+    left: 32.5px;
+    color: #2d1f00;
+}
+/*---Six---step---end---*/
 
-.goals__header {
-    font-family: Gotham-Book, Sans-Serif;
-}
 
-.goals__header-text {
-    font-size: 1.429em;
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1199px) {
+    .roadmap__snake-image {
+        display: none;
+    }
+    .first__wrap {
+        display: none;
+    }
+    .pr0 {
+        padding-right: 15px;
+    }
+    .pl0 {
+        padding-left: 15px;
+    }
+    .roadmap__logo {
+        padding-bottom: 40px;
+    }
+    .second__wrap::after,
+    .third__wrap::before,
+    .fourth__wrap::after,
+    .fifth__wrap::before,
+    .six__wrap::after,
+    .seven__wrap::before,
+    .first__date::before,
+    .second__date::before,
+    .third__date::before,
+    .fourth__date::before,
+    .fifth__date::before,
+    .six__date::before{
+        display: none;
+    }
+    .roadmap__wrap:nth-of-type(even) {
+        text-align: right;
+    }
+    .second__wrap,
+    .fourth__wrap,
+    .six__wrap {
+        text-align: right;
+    }
+    .description__right {
+        text-align: left;
+    }
+    .roadmap__wrap-image--first,
+    .roadmap__wrap-image--third,
+    .roadmap__wrap-image--fifth {
+        top: 0;
+        left: 22%;
+    }
+    .roadmap__wrap-image--second,
+    .roadmap__wrap-image--fourth,
+    .roadmap__wrap-image--six {
+        top: 0;
+        right: 22%;
+    }
+    .second__wrap {
+        padding-top: 0;
+    }
+    .third__wrap {
+        top: 0;
+    }
+    .fourth__wrap {
+        top: 110px;
+    }
+    .fifth__wrap {
+        top: 70px;
+    }
+    .six__wrap {
+        top: 175px;
+    }
+    .seven__wrap {
+        top: 140px;
+    }
+    .eight__wrap {
+        height: 50px;
+    }
 }
-
-.goals__header-subtext {
-    font-size: 1.143em;
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 991px){
+    .roadmap__wrap-image--first,
+    .roadmap__wrap-image--third,
+    .roadmap__wrap-image--fifth {
+        top: 0;
+        left: 15%;
+    }
+    .roadmap__wrap-image--second,
+    .roadmap__wrap-image--fourth,
+    .roadmap__wrap-image--six {
+        top: 0;
+        right: 15%;
+    }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 767px){
+    .date__right {
+        margin-left: 110px;
+    }
+    .date__left {
+        margin-right: 110px;
+    }
+    .roadmap__wrap-image--first,
+    .roadmap__wrap-image--third,
+    .roadmap__wrap-image--fifth {
+        top: 0;
+        left: 3%;
+    }
+    .roadmap__wrap-image--second,
+    .roadmap__wrap-image--fourth,
+    .roadmap__wrap-image--six {
+        top: 0;
+        right: 3%;
+    }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 479px){
+    .roadmap__wrap-image--first,
+    .roadmap__wrap-image--third,
+    .roadmap__wrap-image--fifth,
+    .roadmap__wrap-image--second,
+    .roadmap__wrap-image--fourth,
+    .roadmap__wrap-image--six {
+        display: block;
+        position: relative;
+        margin: 30px auto;
+        left: 0;
+    }
+    .date__right {
+        margin-left: 0;
+    }
+    .date__left {
+        margin-right: 0;
+    }
+    .third__wrap {
+        top: 35px;
+    }
+    .second__wrap,
+    .third__wrap,
+    .fourth__wrap,
+    .fifth__wrap,
+    .six__wrap,
+    .seven__wrap {
+        position: static;
+    }
+    .roadmap__date.date__right {
+        display: block;
+        float: left;
+    }
+    .roadmap__date.date__left {
+        display: block;
+        float: right;
+    }
+    .roadmap__description.description__right {
+        display: block;
+        float: right;
+        padding-left: 5px;
+    }
+    .roadmap__description.description__left {
+        display: block;
+        float: left;
+        padding-right: 5px;
+    }
+    .description__left,
+    .description__right {
+        max-width: 230px;
+    }
+    .roadmap__description-list li,
+    .roadmap__date-list li {
+        font-size: 11px;
+    }
+    .roadmap__logo {
+        padding-bottom: 0;
+    }
+    .eight__wrap {
+        display: none;
+    }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px){
+    /**/
+}
+/*==========  Mobile First  ==========*/
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px){
+    /**/
+}
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px){
+    /**/
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+    /**/
+}
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+    /**/
+}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+    /**/
 }
