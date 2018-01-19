@@ -4,18 +4,21 @@
 .goals {
     font-family: "Gotham-Light", Sans-Serif;
     font-size: 14px;
+    height: 1000px;
 }
 
-.goals__header h2, .goals__header h3 {
+.goals__header {
+    padding-left: 50px;
     font-family: "Gotham-Book", Sans-Serif;
+    border-bottom: 2px solid #000;
 }
 
 .goals__header-text {
-    font-size: 1.429em;
+    font-size: 3.714em;
 }
 
 .goals__header-subtext {
-    font-size: 1.143em;
+    font-size: 2.857em;
 }
 
 .goals__header-logo {
@@ -23,15 +26,237 @@
     height: 150px;
     display:flex;
     align-items:center;
+    padding-left: 70px;
 }
 
 .goals__header-logo:before {
     content: '';
-    position: relative;
-    left: -100px;
+    position: absolute;
+    left: -85px;
     width: 0;
     height: 0;
     border-style: solid;
     border-width: 0 100px 150px 0;
     border-color: transparent #000000 transparent transparent;
+}
+
+.goals__list,
+.goals__arrow-list{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.goals__list {
+    display: inline-block;
+    font-size: 0.857em;
+}
+
+.goals__list:nth-of-type(1){
+    position: relative;
+    left: 193px;
+    top: 8px;
+    z-index: 11;
+    height: 165px;
+    max-width: 220px;
+}
+
+.goals__list:nth-of-type(2){
+    position: relative;
+    left: -120px;
+    bottom: -258px;
+    padding-top: 75px;
+    z-index: 11;
+    height: 165px;
+    max-width: 220px;
+}
+
+.goals__list--left {
+    padding-left: 8px;
+    border-left: 1px solid #000;
+}
+
+.goals__list--left:after {
+    content: " ";
+    position: absolute;
+    bottom: -4px;
+    left: -5px;
+    background-color: #000;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.goals__list--right {
+    position: relative;
+    padding-right: 8px;
+    border-right: 1px solid #000;
+    text-align: right;
+}
+
+.goals__list--right:after {
+    content: " ";
+    position: absolute;
+    top: -3px;
+    right: -5px;
+    background-color: #000;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+}
+
+.goal__list-item {
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.goal__list-item:before {
+    content: " ";
+    position: absolute;
+    left: -5px;
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background: #009ec2;
+    background: -moz-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    background: -webkit-linear-gradient(left, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
+    background: linear-gradient(to right, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec2', endColorstr='#009ec2',GradientType=1 );
+}
+
+.goals__list--right .goal__list-item:before {
+    left: 215.5px;
+}
+
+.goals__list-dist {
+    position: relative;
+    bottom: 45px;
+    right: 55px;
+    display: inline-block;
+    line-height: 35px;
+    height: 35px;
+    width: 35px;
+    font-family: "Gotham-Bold", Sans-Serif;
+    font-size: 0.714em;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.goals__list-dist:before {
+    content: " ";
+    position: absolute;
+    top: -19px;
+    left: -2px;
+    height: 17px;
+    width: 35px;
+    border: 2px solid #000;
+    border-bottom: none;
+    background-color: #ffdd15;
+    border-radius: 100% 100% 0 0;
+    -moz-border-radius: 100% 100% 0 0;
+    -webkit-border-radius: 100% 100% 0 0;
+}
+
+.goals__list-dist:after {
+    content: " ";
+    position: absolute;
+    bottom: -2px;
+    right: -4px;
+    height: 2px;
+    width: 63px;
+    background-color: #000;
+}
+
+.goals__list--right .goals__list-dist {
+    right: -55px;
+}
+
+.goals__list--right .goals__list-dist:after {
+    left: -4px;
+}
+
+.arrow-list__item {
+    display: inline-block;
+    background: #ccc;
+    height: 16px;
+    line-height: 16px;
+    margin: 0 -2px 0 0;
+    text-indent: 35px;
+    position: relative;
+    border-right: 0;
+}
+
+.arrow-list__item:before {
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -10px;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #fff;
+    z-index: 10;
+}
+
+.arrow-list__item:after {
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -8px;
+    border-style: solid;
+    border-width: 8px 0 8px 8px;
+    border-color: transparent transparent transparent #ccc;
+    z-index: 10;
+}
+
+.arrow-list__item:nth-of-type(1),
+.arrow-list__item:nth-of-type(3),
+.arrow-list__item:nth-of-type(5) {
+    background: #d1a32a;
+    background: -moz-linear-gradient(left, #d1a32a 0%, #f8cd06 50%, #d1a32a 100%);
+    background: -webkit-linear-gradient(left, #d1a32a 0%,#f8cd06 50%,#d1a32a 100%);
+    background: linear-gradient(to right, #d1a32a 0%,#f8cd06 50%,#d1a32a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1a32a', endColorstr='#d1a32a',GradientType=1 );
+}
+
+.arrow-list__item:nth-of-type(2),
+.arrow-list__item:nth-of-type(4),
+.arrow-list__item:nth-of-type(6) {
+    background: #009ec2;
+    background: -moz-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    background: -webkit-linear-gradient(left, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
+    background: linear-gradient(to right, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec2', endColorstr='#009ec2',GradientType=1 );
+}
+
+.arrow-list__item:nth-of-type(1) {
+    width: 190px;
+}
+.arrow-list__item:nth-of-type(2) {
+    width: 130px;
+}
+.arrow-list__item:nth-of-type(3) {
+    width: 165px;
+}
+.arrow-list__item:nth-of-type(4) {
+    width: 160px;
+}
+.arrow-list__item:nth-of-type(5) {
+    width: 130px;
+}
+.arrow-list__item:nth-of-type(6) {
+    width: 210px;
+}
+
+.arrow-list__item:nth-of-type(1):after,
+.arrow-list__item:nth-of-type(3):after,
+.arrow-list__item:nth-of-type(5):after {
+    border-color: transparent transparent transparent #d1a32a;
+}
+
+.arrow-list__item:nth-of-type(2):after,
+.arrow-list__item:nth-of-type(4):after,
+.arrow-list__item:nth-of-type(6):after {
+    border-color: transparent transparent transparent #009ec2;
 }
