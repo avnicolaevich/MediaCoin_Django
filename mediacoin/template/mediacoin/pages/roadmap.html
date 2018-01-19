@@ -12,24 +12,23 @@
 
 {% block content %}
 
-    <div class="section space-for-header"></div>
+<div class="section space-for-header"></div>
 <div class="roadmap__wrapper">
     <div class="container">
         <div class="row">
-            <div class="col-xs-6 col-xs-offset-3">
-                <img class="roadmap__logo img-responsive" src="{% static "images/mediacoin-logo.png" %}">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                <img class="roadmap__logo img-responsive" src="{% static 'images/mediacoin-logo.png' %}">
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 pr0">
+            <div class="col-xs-12 col-lg-6 pr0">
                 <div class="roadmap__wrap first__wrap">
                     <img class="roadmap__snake-image" src="{% static 'images/snake.png' %}" alt="">
                 </div>
             </div>
-            <div class="col-xs-6 pl0">
+            <div class="col-xs-12 col-lg-6 pl0">
                 <div class="roadmap__wrap second__wrap">
-                    <img class="roadmap__zero-image" src="{% static 'images/steps/money_grey.png' %}" alt="">
-                    <img class="roadmap__zero-number-image" src="{% static 'images/steps/zero.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--first"></div>
                     <div class="roadmap__date date__right first__date">
                         <ul class="roadmap__date-list">
                             <li class="roadmap__date-item">
@@ -39,7 +38,7 @@
                                 Nov 2017
                             </li>
                             <li class="roadmap__date-item">
-                                <br />
+                                <br/>
                             </li>
                             <li class="roadmap__date-item">
                                 Dec 2017
@@ -78,10 +77,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 pr0">
+            <div class="col-xs-12 col-lg-6 pr0">
                 <div class="roadmap__wrap third__wrap">
-                    <img class="roadmap__one-image" src="{% static 'images/steps/money_yellow.png' %}" alt="">
-                    <img class="roadmap__one-number-image" src="{% static 'images/steps/one.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--second"></div>
                     <div class="roadmap__description description__left">
                         <ul class="roadmap__description-list">
                             <li class="roadmap__description-item">
@@ -106,7 +104,7 @@
                                 ETH launch, ETC payment
                             </li>
                             <li class="roadmap__description-item">
-                                <br />
+                                <br/>
                             </li>
                             <li class="roadmap__description-item">
                                 Desktop Platform Proof of Concept
@@ -164,10 +162,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 pl0">
+            <div class="col-xs-12 col-lg-6 pl0">
                 <div class="roadmap__wrap fourth__wrap">
-                    <img class="roadmap__two-image" src="{% static 'images/steps/money_grey.png' %}" alt="">
-                    <img class="roadmap__two-number-image" src="{% static 'images/steps/two.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--third"></div>
                     <div class="roadmap__date date__right third__date">
                         <ul class="roadmap__date-list">
                             <li class="roadmap__date-item">
@@ -201,10 +198,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 pr0">
+            <div class="col-xs-12 col-lg-6 pr0">
                 <div class="roadmap__wrap fifth__wrap">
-                    <img class="roadmap__three-image" src="{% static 'images/steps/money_yellow.png' %}" alt="">
-                    <img class="roadmap__three-number-image" src="{% static 'images/steps/three.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--fourth"></div>
                     <div class="roadmap__description description__left">
                         <ul class="roadmap__description-list">
                             <li class="roadmap__description-item">
@@ -229,7 +225,7 @@
                                 Artist Services
                             </li>
                             <li class="roadmap__description-item">
-                                <br />
+                                <br/>
                             </li>
                             <li class="roadmap__description-item">
                                 Bandwidth Aggregation
@@ -287,10 +283,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 pl0">
+            <div class="col-xs-12 col-lg-6 pl0">
                 <div class="roadmap__wrap six__wrap">
-                    <img class="roadmap__fourth-image" src="{% static 'images/steps/money_grey.png' %}" alt="">
-                    <img class="roadmap__fourth-number-image" src="{% static 'images/steps/four.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--fifth"></div>
                     <div class="roadmap__date date__right fifth__date">
                         <ul class="roadmap__date-list">
                             <li class="roadmap__date-item">
@@ -324,10 +319,9 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 pr0">
+            <div class="col-xs-12 col-lg-6 pr0">
                 <div class="roadmap__wrap seven__wrap">
-                    <img class="roadmap__five-image" src="{% static 'images/steps/money_yellow.png' %}" alt="">
-                    <img class="roadmap__five-number-image" src="{% static 'images/steps/five.png' %}" alt="">
+                    <div class="roadmap__wrap-image roadmap__wrap-image--six"></div>
                     <div class="roadmap__description description__left">
                         <ul class="roadmap__description-list">
                             <li class="roadmap__description-item">
@@ -350,7 +344,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 pl0">
+            <div class="col-xs-12 col-lg-6 pl0">
                 <div class="roadmap__wrap eight__wrap"></div>
             </div>
         </div>
