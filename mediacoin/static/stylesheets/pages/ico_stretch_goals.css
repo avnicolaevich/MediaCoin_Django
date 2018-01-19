@@ -55,7 +55,7 @@
 .goals__list:nth-of-type(1){
     position: relative;
     left: 193px;
-    top: 8px;
+    top: 119px;
     z-index: 11;
     height: 165px;
     max-width: 220px;
@@ -63,12 +63,50 @@
 
 .goals__list:nth-of-type(2){
     position: relative;
-    left: -120px;
-    bottom: -258px;
-    padding-top: 75px;
+    left: -214px;
+    bottom: -372px;
+    padding-top: 100px;
     z-index: 11;
     height: 165px;
-    max-width: 220px;
+    max-width: 330px;
+}
+
+.goals__list:nth-of-type(3){
+    position: relative;
+    right: 51px;
+    top: 8px;
+    z-index: 11;
+    height: 340px;
+    max-width: 280px;
+}
+
+.goals__list:nth-of-type(4){
+    position: absolute;
+    right: 500px;
+    top: 372px;
+    padding-top: 158px;
+    z-index: 11;
+    height: 335px;
+    max-width: 245px;
+}
+
+.goals__list:nth-of-type(5){
+    position: relative;
+    right: 40px;
+    top: 139px;
+    z-index: 11;
+    height: 177px;
+    max-width: 290px;
+}
+
+.goals__list:nth-of-type(6){
+    position: absolute;
+    right: 155px;
+    top: 372px;
+    padding-top: 160px;
+    z-index: 11;
+    height: 220px;
+    max-width: 238px;
 }
 
 .goals__list--left {
@@ -124,16 +162,25 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec2', endColorstr='#009ec2',GradientType=1 );
 }
 
-.goals__list--right .goal__list-item:before {
-    left: 215.5px;
+.goals__list--right:nth-of-type(2) .goal__list-item:before {
+    left: 309.5px;
+}
+
+.goals__list--right:nth-of-type(4) .goal__list-item:before {
+    left: 240.5px;
+}
+
+.goals__list--right:nth-of-type(6) .goal__list-item:before {
+    left: 233.5px;
 }
 
 .goals__list-dist {
     position: relative;
     bottom: 45px;
     right: 55px;
-    display: inline-block;
-    line-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 35px;
     width: 35px;
     font-family: "Gotham-Bold", Sans-Serif;
@@ -173,6 +220,18 @@
 
 .goals__list--right .goals__list-dist:after {
     left: -4px;
+}
+
+.goals__list--right:nth-of-type(2) .goals__list-dist {
+    left: 325px;
+}
+
+.goals__list--right:nth-of-type(4) .goals__list-dist {
+    left: 256px;
+}
+
+.goals__list--right:nth-of-type(6) .goals__list-dist {
+    left: 248px;
 }
 
 .arrow-list__item {
