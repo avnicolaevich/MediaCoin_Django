@@ -1,6 +1,7 @@
 .h2-bold {
     font-family: "Gotham-Bold", Sans-Serif;
 }
+
 .goals {
     font-family: "Gotham-Light", Sans-Serif;
     font-size: 14px;
@@ -24,8 +25,8 @@
 .goals__header-logo {
     background-color: #000;
     height: 150px;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     padding-left: 70px;
 }
 
@@ -41,7 +42,7 @@
 }
 
 .goals__list,
-.goals__arrow-list{
+.goals__arrow-list {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -52,7 +53,7 @@
     font-size: 0.857em;
 }
 
-.goals__list:nth-of-type(1){
+.goals__list:nth-of-type(1) {
     position: relative;
     left: 193px;
     top: 119px;
@@ -61,7 +62,7 @@
     max-width: 220px;
 }
 
-.goals__list:nth-of-type(2){
+.goals__list:nth-of-type(2) {
     position: relative;
     left: -214px;
     bottom: -372px;
@@ -71,7 +72,7 @@
     max-width: 330px;
 }
 
-.goals__list:nth-of-type(3){
+.goals__list:nth-of-type(3) {
     position: relative;
     right: 51px;
     top: 8px;
@@ -80,7 +81,7 @@
     max-width: 280px;
 }
 
-.goals__list:nth-of-type(4){
+.goals__list:nth-of-type(4) {
     position: absolute;
     right: 500px;
     top: 372px;
@@ -90,7 +91,7 @@
     max-width: 245px;
 }
 
-.goals__list:nth-of-type(5){
+.goals__list:nth-of-type(5) {
     position: relative;
     right: 40px;
     top: 139px;
@@ -99,7 +100,7 @@
     max-width: 290px;
 }
 
-.goals__list:nth-of-type(6){
+.goals__list:nth-of-type(6) {
     position: absolute;
     right: 155px;
     top: 372px;
@@ -157,9 +158,9 @@
     border-radius: 50%;
     background: #009ec2;
     background: -moz-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
-    background: -webkit-linear-gradient(left, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
-    background: linear-gradient(to right, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec2', endColorstr='#009ec2',GradientType=1 );
+    background: -webkit-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    background: linear-gradient(to right, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ec2', endColorstr='#009ec2', GradientType=1);
 }
 
 .goals__list--right:nth-of-type(2) .goal__list-item:before {
@@ -274,9 +275,9 @@
 .arrow-list__item:nth-of-type(5) {
     background: #d1a32a;
     background: -moz-linear-gradient(left, #d1a32a 0%, #f8cd06 50%, #d1a32a 100%);
-    background: -webkit-linear-gradient(left, #d1a32a 0%,#f8cd06 50%,#d1a32a 100%);
-    background: linear-gradient(to right, #d1a32a 0%,#f8cd06 50%,#d1a32a 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1a32a', endColorstr='#d1a32a',GradientType=1 );
+    background: -webkit-linear-gradient(left, #d1a32a 0%, #f8cd06 50%, #d1a32a 100%);
+    background: linear-gradient(to right, #d1a32a 0%, #f8cd06 50%, #d1a32a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d1a32a', endColorstr='#d1a32a', GradientType=1);
 }
 
 .arrow-list__item:nth-of-type(2),
@@ -284,26 +285,31 @@
 .arrow-list__item:nth-of-type(6) {
     background: #009ec2;
     background: -moz-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
-    background: -webkit-linear-gradient(left, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
-    background: linear-gradient(to right, #009ec2 0%,#85d2ee 50%,#009ec2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009ec2', endColorstr='#009ec2',GradientType=1 );
+    background: -webkit-linear-gradient(left, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    background: linear-gradient(to right, #009ec2 0%, #85d2ee 50%, #009ec2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#009ec2', endColorstr='#009ec2', GradientType=1);
 }
 
 .arrow-list__item:nth-of-type(1) {
     width: 190px;
 }
+
 .arrow-list__item:nth-of-type(2) {
     width: 130px;
 }
+
 .arrow-list__item:nth-of-type(3) {
     width: 165px;
 }
+
 .arrow-list__item:nth-of-type(4) {
     width: 160px;
 }
+
 .arrow-list__item:nth-of-type(5) {
     width: 130px;
 }
+
 .arrow-list__item:nth-of-type(6) {
     width: 210px;
 }
@@ -318,4 +324,132 @@
 .arrow-list__item:nth-of-type(4):after,
 .arrow-list__item:nth-of-type(6):after {
     border-color: transparent transparent transparent #009ec2;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+    .goals {
+        height: auto;
+    }
+    .goals__header {
+        text-align: center;
+        padding-left: 0;
+    }
+    .goals__header-text {
+        font-size: 3em
+    }
+
+    .goals__header-subtext {
+        font-size: 2em;
+    }
+    .goals__header-logo {
+        background-color: #000;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+    .goals__header-logo:before {
+        content: none;
+    }
+    .goals__list:nth-of-type(1),
+    .goals__list:nth-of-type(2),
+    .goals__list:nth-of-type(3),
+    .goals__list:nth-of-type(4),
+    .goals__list:nth-of-type(5),
+    .goals__list:nth-of-type(6) {
+        position: relative;
+        display: block;
+        top: 0;
+        left: 0;
+        height: auto;
+        width: 100%;
+        padding-top: 0;
+        margin: 15px auto;
+        max-width: 600px;
+    }
+
+    .goals__list--left:after,
+    .goals__list--right:after {
+        content: none;
+    }
+
+    .goals__list--right:nth-of-type(2) .goal__list-item:before,
+    .goals__list--right:nth-of-type(4) .goal__list-item:before,
+    .goals__list--right:nth-of-type(6) .goal__list-item:before {
+        left: 594.5px;
+    }
+
+    .goals__list--right:nth-of-type(2) .goals__list-dist,
+    .goals__list--right:nth-of-type(4) .goals__list-dist,
+    .goals__list--right:nth-of-type(6) .goals__list-dist {
+        left: 610px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+    .goals__header-text {
+        font-size: 2.3em
+    }
+
+    .goals__header-subtext {
+        font-size: 1.3em;
+    }
+
+    .goals__list:nth-of-type(1),
+    .goals__list:nth-of-type(2),
+    .goals__list:nth-of-type(3),
+    .goals__list:nth-of-type(4),
+    .goals__list:nth-of-type(5),
+    .goals__list:nth-of-type(6) {
+        max-width: 300px;
+    }
+
+    .goals__list--right:nth-of-type(2) .goal__list-item:before,
+    .goals__list--right:nth-of-type(4) .goal__list-item:before,
+    .goals__list--right:nth-of-type(6) .goal__list-item:before {
+        left: 294.5px;
+    }
+
+    .goals__list--right:nth-of-type(2) .goals__list-dist,
+    .goals__list--right:nth-of-type(4) .goals__list-dist,
+    .goals__list--right:nth-of-type(6) .goals__list-dist {
+        left: 310px;
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+    .goals__list:nth-of-type(1),
+    .goals__list:nth-of-type(2),
+    .goals__list:nth-of-type(3),
+    .goals__list:nth-of-type(4),
+    .goals__list:nth-of-type(5),
+    .goals__list:nth-of-type(6) {
+        max-width: 200px;
+    }
+
+    .goals__list--right:nth-of-type(2) .goal__list-item:before,
+    .goals__list--right:nth-of-type(4) .goal__list-item:before,
+    .goals__list--right:nth-of-type(6) .goal__list-item:before {
+        left: 194.5px;
+    }
+
+    .goals__list--right:nth-of-type(2) .goals__list-dist,
+    .goals__list--right:nth-of-type(4) .goals__list-dist,
+    .goals__list--right:nth-of-type(6) .goals__list-dist {
+        left: 210px;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+
 }
