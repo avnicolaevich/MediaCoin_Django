@@ -16,6 +16,8 @@
 
     <link href="{% static "stylesheets/bootstrap.css" %}" rel="stylesheet" />
     <link href="{% static "stylesheets/gaia.css" %}" rel="stylesheet"/>
+    <link href="{% static "stylesheets/mediacoin-icons.css" %}" rel="stylesheet"/>
+
 
     <!--     Fonts and icons     -->
     <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
@@ -32,6 +34,7 @@
 
     {% block content %}{% endblock %}
 
+    {% include "mediacoin/partials/sidebar.html"%}
     {% include "footer.html" %}
 
 </body>
