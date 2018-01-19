@@ -1976,6 +1976,15 @@ a,
 .section-presentation-page {
   padding: 0;
 }
+
+.section-header .bg-video {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .section-header .container,
 .section-header-blog .container,
 .section-presentation-page .container {
