@@ -18,13 +18,7 @@
     font-size: 1.143em;
 }
 .section {
-    padding: 0;
-}
-.navbar {
-    display: none;
-}
-.footer {
-    display: none;
+    background: #000;
 }
 .pr0 {
     padding-right: 0;
@@ -40,7 +34,7 @@
     padding-top: 44px;
 }
 .roadmap__logo {
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
 }
 .roadmap__wrap {
     width: 100%;
