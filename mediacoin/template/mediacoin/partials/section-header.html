@@ -1,15 +1,6 @@
 {% load staticfiles %}
 <div class="section section-header">
-    <div class="parallax filter filter-gradient-black">
-        <video class="bg-video" autoplay="autoplay" poster="{% static "images/header-bg.png" %}"
-               loop="loop" muted="muted" onended="var v=this;setTimeout(function(){v.play()},300)">
-            <source src="{% static 'media/header-bg.m4v' %}" type="video/mp4"/>
-            <source src="{% static 'media/header-bg.webm' %}" type="video/webm"/>
-            <source src="{% static 'media/header-bg.ogv' %}" type="video/ogg"/>
-            <source src="{% static 'media/header-bg.mp4' %}"/>
-        </video>
-        {#     <div class="image" style="background-image: url('{% static "images/bokeh.jpg" %}')"> #}
-    </div>
+    <div id="bgndVideo" class="player" data-property="{videoURL: 'https://youtu.be/embed/tDVgJfYiJOk', containment:'.section-header', showYTLogo:false, showControls:false, loop:true, stopMovieOnBlur:false}"></div>
     <div class="container">
         <div class="content custom-content">
             <div class="title-area">
