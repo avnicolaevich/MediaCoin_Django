@@ -34,7 +34,8 @@ urlpatterns = [
     url(r'^ico-stretch-goals/$', views.ico_stretch_goals, name='ico_stretch_goals'),
     # # ICO stretch goals view page
     url(r'^roadmap/$', views.roadmap, name='roadmap'),
-
+    # # Team Page
+    url(r'^team/$', views.team, name='team'),
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),
 
