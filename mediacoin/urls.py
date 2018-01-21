@@ -34,9 +34,9 @@ urlpatterns = [
     url(r'^roadmap/$', views.roadmap, name='roadmap'),
     #ICO
     url(r'^ico/$', views.ico, name='ico'),
-
-    # # Team Page
+    # Team Page
     url(r'^team/$', views.team, name='team'),
+
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),
 
