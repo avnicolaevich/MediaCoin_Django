@@ -4322,10 +4322,11 @@ body {
 }
 
 .referral-link-path {
-    position: fixed;
-    height: 47px;
-    margin-top: 23px;
-    margin-left: 250px;
+    /*position: fixed;*/
+    /*height: 47px;*/
+    /*margin-top: 23px;*/
+    /*margin-left: 250px;*/
+    text-align: center;
 }
 
 .referral-link-path, .referral-link-path > a, .referral-link-path > span {
