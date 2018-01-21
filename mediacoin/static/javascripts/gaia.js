@@ -338,7 +338,6 @@ function createChart() {
                             newWords = []
                         } else if ((i+1) == words.length) {
                             layout.append(new kendo.drawing.Text(newWords.join(" ")));
-                            console.log('----->', newWords);
                             newWords = []
                         }
                     }
@@ -355,32 +354,40 @@ function createChart() {
                 gradient: "none"
             },
             data: [{
-                category: "Bounty Program and Community offers",
+                category: "Bounty Program for development and integration",
                 value: 20,
-                color: "#9de219"
+                color: "#fdd201"
             }, {
-                category: "Exchange Listing, payment options development",
-                value: 5,
+                category: "Community offers",
+                value: 2,
                 color: "#90cc38"
-            }, {
-                category: "Liquidity and new sales, 20% over market rate (Credit Card, Paypal, WePay, etc)",
-                value: 25,
-                color: "#068c35"
-            }, {
-                category: "Marketing Partnerships",
-                value: 20,
-                color: "#006634"
             }, {
                 category: "Team bonus",
                 value: 10,
-                color: "#004d38"
-            }, {
-                category: "Promotional tokens for wallets, publishers sign up and referral",
-                value: 110,
                 color: "#033939"
+            }, {
+                category: "Liquidity and new sales, 20% over market rate (Credit Card, Paypal, WePay, etc)",
+                value: 25,
+                color: "#fdd201"
+            }, {
+                category: "Promotions and Referrals tokens",
+                value: 10,
+                color: "#033939"
+            }, {
+                category: "Bug Hunter",
+                value: 1,
+                color: "#006634"
+            },{
+                category: "Marketing Partnerships",
+                value: 20,
+                color: "#ecc011"
+            }, {
+                category: "Exchange Listing, payment options development (Could also write as \"Financial Services Development\")",
+                value: 2,
+                color: "#068c35"
             },
             {
-                category: "Reserve, repurchase tokens at 10% below market rate",
+                category: "Reserved",
                 value: 10,
                 color: "#033939"
             }]
