@@ -305,3 +305,92 @@ var BrowserDetect = {
 };
 
 var better_browser = '<div class="container"><div class="better-browser row"><div class="col-md-2"></div><div class="col-md-8"><h3>We are sorry but it looks like your Browser doesn\'t support our website Features. In order to get the full experience please download a new version of your favourite browser.</h3></div><div class="col-md-2"></div><br><div class="col-md-4"><a href="https://www.mozilla.org/ro/firefox/new/" class="btn btn-warning">Mozilla</a><br></div><div class="col-md-4"><a href="https://www.google.com/chrome/browser/desktop/index.html" class="btn ">Chrome</a><br></div><div class="col-md-4"><a href="http://windows.microsoft.com/en-us/internet-explorer/ie-11-worldwide-languages" class="btn">Internet Explorer</a><br></div><br><br><h4>Thank you!</h4></div></div>';
+
+function createChart() {
+    $("#chart").kendoChart({
+        // title: {
+        //     position: "top",
+        //     text: "Overall distribution of remaining token after ICO:"
+        // },
+        legend: {
+            visible: false
+        },
+        chartArea: {
+            background: ""
+        },
+        seriesDefaults: {
+            labels: {
+                visible: true,
+                background: "transparent",
+                visual: function (e) {
+                    var rect = new kendo.geometry.Rect(e.rect.origin, [e.rect.size.width, 100]);
+
+                    var layout = new kendo.drawing.Layout(rect, {
+                        orientation: "vertical",
+                        alignContent: "center"
+                    });
+                    var words = e.text.split(" ");
+                    var newWords = [];
+                    for (var i = 0; i < words.length; i++) {
+                        newWords.push(words[i]);
+                        if (newWords.length == 3) {
+                            layout.append(new kendo.drawing.Text(newWords.join(" ")));
+                            newWords = []
+                        } else if ((i+1) == words.length) {
+                            layout.append(new kendo.drawing.Text(newWords.join(" ")));
+                            console.log('----->', newWords);
+                            newWords = []
+                        }
+                    }
+                    layout.reflow();
+                    return layout;
+                },
+                template: "#= category #: #= value#%"
+            }
+        },
+        series: [{
+            type: "pie",
+            startAngle: 150,
+            overlay: {
+                gradient: "none"
+            },
+            data: [{
+                category: "Bounty Program and Community offers",
+                value: 20,
+                color: "#9de219"
+            }, {
+                category: "Exchange Listing, payment options development",
+                value: 5,
+                color: "#90cc38"
+            }, {
+                category: "Liquidity and new sales, 20% over market rate (Credit Card, Paypal, WePay, etc)",
+                value: 25,
+                color: "#068c35"
+            }, {
+                category: "Marketing Partnerships",
+                value: 20,
+                color: "#006634"
+            }, {
+                category: "Team bonus",
+                value: 10,
+                color: "#004d38"
+            }, {
+                category: "Promotional tokens for wallets, publishers sign up and referral",
+                value: 110,
+                color: "#033939"
+            },
+            {
+                category: "Reserve, repurchase tokens at 10% below market rate",
+                value: 10,
+                color: "#033939"
+            }]
+        }],
+        tooltip: {
+            visible: true,
+            format: "{0}%"
+        }
+    });
+}
+
+$(document).ready(createChart);
+$(document).bind("kendo:skinChange", createChart);
