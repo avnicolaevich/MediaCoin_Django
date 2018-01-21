@@ -19,6 +19,10 @@ def index(request):
 def demo(request):
 	return render(request, 'mediacoin/demo.html')
 
+# ICO stretch goals view page
+def ico(request):
+	return render(request, 'mediacoin/pages/ico.html')
+
 # roadmap page
 def roadmap(request):
 	return render(request, 'mediacoin/pages/roadmap.html')

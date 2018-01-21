@@ -32,6 +32,8 @@ urlpatterns = [
     url(r'^demo/$', views.demo, name='demo'),
     # Roadmap
     url(r'^roadmap/$', views.roadmap, name='roadmap'),
+    #ICO
+    url(r'^ico/$', views.ico, name='ico'),
 
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),

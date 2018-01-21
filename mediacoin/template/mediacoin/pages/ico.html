@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} ICO | Media Coin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static "stylesheets/index.css" %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    {% include 'mediacoin/partials/section-funding-pre-ico.html' %}
+
+{% endblock %}
