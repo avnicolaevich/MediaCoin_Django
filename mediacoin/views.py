@@ -27,6 +27,10 @@ def ico(request):
 def roadmap(request):
 	return render(request, 'mediacoin/pages/roadmap.html')
 
+# team page
+def team(request):
+	return render(request, 'mediacoin/pages/team.html')
+
 # purchase gift promo code page
 def purchaseGiftCard(request):
     gift_prices = GiftPrice.objects.all()
