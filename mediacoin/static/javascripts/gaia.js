@@ -401,3 +401,7 @@ function createChart() {
 
 $(document).ready(createChart);
 $(document).bind("kendo:skinChange", createChart);
+
+$(document).ready(function () {
+
+});
