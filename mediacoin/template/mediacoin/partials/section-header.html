@@ -4,10 +4,11 @@
     <video class="bg-video" autoplay="autoplay" title="video_bg" preload="yes"
            loop="loop" poster="{% static 'media/video/Data.jpg' %}"
            src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.m4v' %}">
+        <source src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.mp4' %}"/>
         <source src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.m4v' %}" type="video/mp4"/>
         <source src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.webm' %}" type="video/webm;codecs='vp8, vorbis'"/>
         <source src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.ogv' %}" type="video/ogg"/>
-        <source src="{{ request.build_absolute_uri | slice:":-1" }}{% static 'media/video/Data.mp4' %}"/>
+
         <object type="application/x-shockwave-flash" data="{% static 'media/video/flashfox.swf' %}">
             <param name="movie" value="{% static 'media/video/flashfox.swf' %}"/>
             <param name="allowFullScreen" value="true"/>
