@@ -30,10 +30,12 @@ urlpatterns = [
     url(r'^u/(?P<referral_link_path>).*/$', views.logWithReferralLinkPath, name='u-referral-link-path'),
     # demo page
     url(r'^demo/$', views.demo, name='demo'),
-    # # ICO stretch goals view page
-    url(r'^ico-stretch-goals/$', views.ico_stretch_goals, name='ico_stretch_goals'),
-    # # ICO stretch goals view page
+    # Roadmap
     url(r'^roadmap/$', views.roadmap, name='roadmap'),
+    #ICO
+    url(r'^ico/$', views.ico, name='ico'),
+    # Team Page
+    url(r'^team/$', views.team, name='team'),
 
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Team | MediaCoin {% endblock %}
+
+{% block page-styles %}
+
+    <link href="{% static 'stylesheets/pages/team.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="section space-for-header"></div>
+    {% include "mediacoin/partials/section-team-freebie.html" %}
+
+
+{% endblock %}
+
+{% block page-scripts %}
+
+    <script type="text/javascript" src="{% static 'javascripts/pages/team.js' %}"></script>
+
+{% endblock %}

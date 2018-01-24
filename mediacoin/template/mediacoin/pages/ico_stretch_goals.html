@@ -1,12 +1,8 @@
-{% extends 'base.html' %}
-
 {% load staticfiles %}
-
-{% block title %} DEMO | Media Coin {% endblock %}
 
 {% block page-styles %}
 
-    <link href="{% static "stylesheets/pages/ico_stretch_goals.css" %}" rel="stylesheet">
+    <link href="{% static 'stylesheets/pages/ico_stretch_goals.css' %}" rel="stylesheet">
 
 {% endblock %}
 
@@ -95,12 +91,10 @@
         </div>
     </section>
 
-{#    {% include "mediacoin/partials/section-demo.html" %}#}
-
 {% endblock %}
 
 {% block page-scripts %}
 
-    <script type="text/javascript" src="{% static "javascripts/pages/ico_stretch_goals.js" %}"></script>
+    <script type="text/javascript" src="{% static 'javascripts/pages/ico_stretch_goals.js' %}"></script>
 
 {% endblock %}
