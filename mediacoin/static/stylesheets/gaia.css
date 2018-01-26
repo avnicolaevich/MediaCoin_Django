@@ -218,15 +218,25 @@ small,
 .subtitle {
     font-family: "Poppins", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 a {
-    color: #777777;
+    color: yellow;
     opacity: .7;
     font-size: 14px;
 }
 
 a:hover {
-    color: #777777;
+    color: yellow;
+    opacity: 1;
+}
+
+.darklink a {
+    color: #000000;
+    opacity: .7;
+    font-size: 14px;
+}
+
+.darklink a:hover {
+    color: #000000;
     opacity: 1;
 }
 
@@ -1731,13 +1741,13 @@ a,
 }
 
 .footer nav > ul a:not(.btn) {
-    color: #777777;
+    color: yellow;
     display: block;
     margin-bottom: 3px;
 }
 
 .footer nav > ul a:not(.btn):hover, .footer nav > ul a:not(.btn):focus {
-    color: #777777;
+    color: yellow;
 }
 
 .footer .social-area {
@@ -4330,7 +4340,7 @@ body {
 }
 
 .referral-link-path, .referral-link-path > a, .referral-link-path > span {
-    color: #FFFFFF;
+    color: yellow;
     opacity: 0.75;
 }
 
@@ -4339,7 +4349,7 @@ body {
 }
 
 .referral-link-path > a:hover, .referral-link-path > a:active, .referral-link-path > a:focus {
-    color: #FFFFFF;
+    color: yellow;
     opacity: 1;
 }
 
