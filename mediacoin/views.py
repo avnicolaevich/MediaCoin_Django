@@ -27,6 +27,14 @@ def ico(request):
 def roadmap(request):
 	return render(request, 'mediacoin/pages/roadmap.html')
 
+# privacy page
+def privacy(request):
+	return render(request, 'mediacoin/pages/privacy.html')
+
+# refund page
+def refund(request):
+	return render(request, 'mediacoin/pages/refund.html')
+
 # team page
 def team(request):
 	return render(request, 'mediacoin/pages/team.html')
