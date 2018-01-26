@@ -23,19 +23,24 @@ from mediacoin import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #url(r'^blog/', import('blog.urls')),
 
-    # landing page
+    # main page
     url(r'^$', views.index, name='index'),
     # referral user page
     url(r'^u/(?P<referral_link_path>).*/$', views.logWithReferralLinkPath, name='u-referral-link-path'),
+    url(r'^referral/$', views.manageref, name='referral'),
+
     # demo page
-    url(r'^demo/$', views.demo, name='demo'),
-    # Roadmap
-    url(r'^roadmap/$', views.roadmap, name='roadmap'),
-    #ICO
-    url(r'^ico/$', views.ico, name='ico'),
-    # Team Page
-    url(r'^team/$', views.team, name='team'),
+    url(r'^demo.html$', views.demo, name='demo'),
+    #static pages
+    url(r'^artist.html$', views.artist, name='artist'),
+    url(r'^platform.html$', views.platform, name='platform'),
+    url(r'^roadmap.html$', views.roadmap, name='roadmap'),
+    url(r'^team.html$', views.team, name='team'),
+    url(r'^ico.html$', views.ico, name='ico'),
+    url(r'^suport.html$', views.support, name='support'),
+    url(r'^contact.html$', views.contact, name='contact'),
 
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),
@@ -46,4 +51,3 @@ urlpatterns = [
     url(r'^purchase-gift-card/purchase-gift$', views.purchaseGiftPromoCode, name='purchase-gift'),
     url(r'^purchase-gift-card/get-braintree-token$', views.getClientToken, name='get-braintree-token')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
