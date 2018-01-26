@@ -29,21 +29,21 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     # referral user page
     url(r'^u/(?P<referral_link_path>).*/$', views.logWithReferralLinkPath, name='u-referral-link-path'),
-    url(r'^referral/$', views.manageref, name='referral'),
+    # url(r'^referral/$', views.manageref, name='referral'),
 
     # demo page
     url(r'^demo.html$', views.demo, name='demo'),
     #static pages
-    url(r'^artist.html$', views.artist, name='artist'),
-    url(r'^platform.html$', views.platform, name='platform'),
+    # url(r'^artist.html$', views.artist, name='artist'),
+    # url(r'^platform.html$', views.platform, name='platform'),
     url(r'^roadmap.html$', views.roadmap, name='roadmap'),
     url(r'^team.html$', views.team, name='team'),
     url(r'^ico.html$', views.ico, name='ico'),
-    url(r'^privacy.html$', views.privacy, name='privacy'),
-    url(r'^refund.html$', views.refund, name='refund'),
-    url(r'^cookies.html$', views.cookies, name='cookies'),
-    url(r'^suport.html$', views.support, name='support'),
-    url(r'^contact.html$', views.contact, name='contact'),
+    # url(r'^privacy.html$', views.privacy, name='privacy'),
+    # url(r'^refund.html$', views.refund, name='refund'),
+    # url(r'^cookies.html$', views.cookies, name='cookies'),
+    # url(r'^suport.html$', views.support, name='support'),
+    # url(r'^contact.html$', views.contact, name='contact'),
 
     # purchase gift promo code page
     url(r'^purchase-gift-card/$', views.purchaseGiftCard, name='purchase-gift-card'),
