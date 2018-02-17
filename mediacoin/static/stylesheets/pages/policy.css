@@ -1,4 +1,4 @@
-.container {
+.section {
     background-color: #333;
 }
 
@@ -23,4 +23,9 @@
 
 .privacy__text-date {
     color: #fff;
+}
+
+#share-buttons {
+    margin: 0 auto;
+    max-width: 680px;
 }

@@ -16,6 +16,9 @@
     <link href="{% static 'stylesheets/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'stylesheets/gaia.css' %}" rel="stylesheet"/>
     <link href="{% static 'stylesheets/mediacoin-icons.css' %}" rel="stylesheet"/>
+    <link href="{% static 'stylesheets/ssbp.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'stylesheets/simple-share.css' %}" rel="stylesheet"/>
+    <link href="{% static 'stylesheets/admin-theme.css' %}" rel="stylesheet"/>
 
 
     <!--     Fonts and icons     -->
@@ -36,6 +39,53 @@
     {% include "footer.html" %}
     {% include "sidebar.html" %}
 
+
+    <div class="ssbp-set--two ssbp-wrap ssbp--centred ssbp--theme-1">
+        <button class="ssbp-toggle-switch ssbp-toggle-close" style="display: inline-block;">
+            <span></span>
+        </button>
+        <div class="ssbp-container" data-ssbp-share-text="Keeping sharing simple..." data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-title="  HTML Share Buttons" data-ssbp-short-url="" data-ssbp-post-id="150">
+            <ul class="ssbp-list">
+                <li class="ssbp-li--facebook">
+                    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com/html-share-buttons/" class="ssbp-btn ssbp-facebook ssbp-facebook--standard" rel="nofollow" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="Facebook">
+                        <span class="ssbp-text">Facebook</span>
+                    </a>
+                        <span class="ssbp-total-facebook-shares ssbp-each-share" data-url="https://simplesharebuttons.com/html-share-buttons/">770</span>
+                </li>
+                <li class="ssbp-li--google">
+                    <a href="https://plus.google.com/share?url=https://simplesharebuttons.com/html-share-buttons/" class="ssbp-btn ssbp-google" rel="nofollow" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="Google+">
+                        <span class="ssbp-text">Google+</span>
+                    </a>
+                        <span class="ssbp-total-google-shares ssbp-each-share">0</span>
+                </li>
+                <li class="ssbp-li--linkedin">
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com/html-share-buttons/" class="ssbp-btn ssbp-linkedin" rel="nofollow" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="LinkedIn">
+                        <span class="ssbp-text">Linkedin</span>
+                    </a>
+                        <span class="ssbp-total-linkedin-shares ssbp-each-share">114</span>
+                </li>
+                <li class="ssbp-li--twitter">
+                    <a href="https://twitter.com/share?url=https://simplesharebuttons.com/html-share-buttons/&amp;text=++HTML+Share+Buttons+&amp;hashtags=fairtoshare&amp;via=fairtoshare" class="ssbp-btn ssbp-twitter ssbp-twitter--standard" rel="nofollow" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="Twitter">
+                        <span class="ssbp-text">Twitter</span>
+                    </a><span class="ssbp-total-twitter-shares ssbp-each-share">68</span>
+                </li>
+                <li class="ssbp-li--email">
+                    <a href="mailto:?Subject=  HTML Share Buttons&amp;Body=%20https://simplesharebuttons.com/html-share-buttons/" class="ssbp-btn ssbp-email ssbp-email-popup" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="Email">
+                        <span class="ssbp-text">Email</span>
+                    </a>
+                </li>
+                <li class="ssbp-li--ellipsis">
+                    <a href="javascript:;" class="ssbp-btn ssbp-ellipsis" data-ssbp-title="  HTML Share Buttons" data-ssbp-url="https://simplesharebuttons.com/html-share-buttons/" data-ssbp-site="Ellipsis">
+                        <span class="ssbp-text">More</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="ssbp-input-url-div">
+                <input class="ssbp-input-url" type="text" value="https://simplesharebuttons.com/html-share-buttons/">
+            </div>
+            <span class="ssbp-total-shares"><b>952</b></span>
+        </div>
+    </div>
 </body>
 
 <!--   core js files    -->
@@ -51,6 +101,7 @@
 
 <script type="text/javascript" src="{% static 'javascripts/uuid-generate.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/identify.js' %}"></script>
+<script src="{% static 'javascripts/admin.js' %}"></script>
 
 <script>
     /* register csrftoken for all customized ajax */
